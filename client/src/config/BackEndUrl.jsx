@@ -1,4 +1,6 @@
 
-const BackEndUrl="http://localhost:8080";
+
+
+const BackEndUrl = import.meta.env.VITE_SERVER_URL;
 
 export default BackEndUrl;
