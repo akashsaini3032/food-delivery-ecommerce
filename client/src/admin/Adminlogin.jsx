@@ -55,7 +55,7 @@ import BackEndUrl from '../config/BackEndUrl';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-const AdminLogin = () => {
+const Adminlogin = () => {
   const [adminid, setAdminid] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -160,4 +160,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default Adminlogin;

@@ -1,7 +1,7 @@
 import  {BrowserRouter, Routes, Route} from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
-import AdminLogin from "./admin/adminlogin";
+import Adminlogin from "./admin/Adminlogin";
 import AdminDashBoard from "./admin/AdminDashBoard";
 import UploadProduct from "./admin/UploadProduct";
 import CustomerOrder from "./admin/CustomerOrder";
@@ -29,7 +29,7 @@ const App=()=>{
           <Route path="/menu" element={<Menu/>}></Route>
           <Route path="/offers" element={<Offers/>}></Route>
           <Route path="/profile" element={<Profile/>}></Route>
-           <Route path="/admin" element={<AdminLogin/>}></Route>
+           <Route path="/admin" element={<Adminlogin/>}></Route>
            <Route path="cartdata" element={<CartData/>}/>
            <Route path="checkout" element={<CheckOut/>} />
            <Route path="productdisplay/:id" element={<ProductDisplay/>}/>
