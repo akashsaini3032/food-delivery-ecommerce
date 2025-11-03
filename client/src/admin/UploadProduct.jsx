@@ -52,7 +52,7 @@ const UploadProduct=()=>{
       </Form.Group>
 
         <Form.Select aria-label="Default select example"  name="category" onChange={handleInput}>
-      <option>Select Categor</option>
+      <option>Select Category</option>
       <option value="veg">Veg</option>
       <option value="vegan">Vegan</option>
       <option value="nonveg">NonVeg</option>

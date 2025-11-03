@@ -1,0 +1,158 @@
+/* ===============================
+   UploadProduct Component Styles
+   Premium Food Delivery Theme v2
+   =============================== */
+
+:root {
+  --primary: #ff3d00; /* Vibrant food red */
+  --secondary: #ff9100; /* Appetizing orange */
+  --accent: #ffca28; /* Warm gold tone */
+  --bg: #fffaf5; /* Soft cream background */
+  --text-main: #3e2723; /* Deep brown text */
+  --border: #ffe0b2;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-strong: rgba(0, 0, 0, 0.25);
+  --radius: 14px;
+}
+
+/* ========== Form Container ========== */
+form {
+  width: 380px !important;
+  margin: 2.5rem auto;
+  background: #fff;
+  padding: 2rem 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px var(--shadow-light);
+  border: 1px solid var(--border);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  opacity: 0.05;
+  transform: skewX(-15deg);
+  transition: all 0.8s ease-in-out;
+}
+
+form:hover::before {
+  left: 100%;
+}
+
+form:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px var(--shadow-strong);
+}
+
+/* ========== Labels ========== */
+form label {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* ========== Inputs ========== */
+form input[type="text"],
+form input[type="file"],
+form select {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 8px rgba(255, 145, 0, 0.3);
+  outline: none;
+  background-color: #fffdf7;
+}
+
+/* ========== File Upload Styling ========== */
+form input[type="file"] {
+  border: 1.5px dashed var(--secondary);
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form input[type="file"]:hover {
+  border-color: var(--primary);
+  background-color: #fff5ef;
+}
+
+/* ========== Select Dropdown ========== */
+form select {
+  cursor: pointer;
+  background-image: linear-gradient(to right, #fff, #fff8ef);
+}
+
+/* ========== Button ========== */
+form button[type="submit"] {
+  width: 100%;
+  margin-top: 1.2rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(255, 87, 34, 0.3);
+}
+
+form button[type="submit"]:hover {
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 111, 0, 0.35);
+}
+
+/* Button Active State */
+form button[type="submit"]:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== Animations ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form * {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 480px) {
+  form {
+    width: 90% !important;
+    padding: 1.5rem;
+  }
+  form button[type="submit"] {
+    font-size: 0.95rem;
+  }
+}

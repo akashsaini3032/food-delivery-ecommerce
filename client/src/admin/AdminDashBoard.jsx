@@ -8,7 +8,19 @@ const AdminDashBoard = () => {
                 <h3> Welcome To AdminDashboard</h3>
             </div>
             <div>
-                Welcome : {localStorage.getItem("adminid")} ! Logout
+                {/* Welcome : {localStorage.getItem("adminid")} ! Logout */}
+                Welcome : {localStorage.getItem("adminid")} ! 
+<span 
+  onClick={() => {
+    localStorage.removeItem("adminid");
+    alert("Logout successful!");
+    window.location.href = "/home";
+  }} 
+  style={{ color: "red", fontWeight: "600", cursor: "pointer", marginLeft: "6px" }}
+>
+  Logout
+</span>
+
             </div>
             <hr />
             <div id="container">

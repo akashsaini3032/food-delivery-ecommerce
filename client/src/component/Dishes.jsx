@@ -95,7 +95,7 @@ const Dishes = () => {
         <button className="dish-nav right" onClick={handleNext}>&gt;</button>
       </div>
 
-      <button className="view-menu-btn" onClick={() => navigate('/')}>VIEW MENU</button>
+      <button className="view-menu-btn" onClick={() => navigate('/menu')}>VIEW MENU</button>
     </section>
   );
 };

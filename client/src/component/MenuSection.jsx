@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import "../css/MenuSection.css";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -72,6 +73,7 @@ const MenuSection = () => {
   const [activeTab, setActiveTab] = useState('Desserts');
 
   const { items, image } = menuData[activeTab];
+  const navigate = useNavigate();
 
   return (
     <div className="menu-section__container">
@@ -110,7 +112,12 @@ const MenuSection = () => {
         During <span>winter</span> daily from <strong>7:00 pm to 9:00 pm</strong>
       </p>
 
-      <button className="menu-section__btn">VIEW ALL MENU</button>
+      <button
+  className="menu-section__btn"
+  onClick={() => navigate("/menu")}
+>
+  VIEW ALL MENU
+</button>
     </div>
   );
 };

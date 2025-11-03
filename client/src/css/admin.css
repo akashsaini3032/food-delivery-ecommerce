@@ -1,26 +1,33 @@
 
-/* AdminDashboard.css */
-:root {
-  --primary-bg: #0e0e10;
-  --card-bg: #1c1c1f;
-  --sidebar-bg: rgba(30, 30, 30, 0.85);
-  --text-main: #e0e0e0;
-  --text-muted: #a0a0a0;
-  --highlight-blue: #42aaff;
-  --highlight-green: #00ffab;
-  --highlight-orange: #ffae42;
-  --highlight-purple: #bb86fc;
+
+ :root {
+  /* Food Delivery Theme Colors */
+  --primary-bg: #fff8f0;
+  --card-bg: #ffffff;
+  --sidebar-bg: #fff3e0;
+  --text-main: #3b2008;
+  --text-muted: #7a5b39;
+  --highlight-red: #e53935;
+  --highlight-orange: #ff7043;
+  --highlight-yellow: #ffca28;
+  --accent-green: #66bb6a;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
 }
 
+/* ---------- HEADER ---------- */
 #adminheader {
-  background: linear-gradient(90deg, var(--highlight-blue), var(--highlight-purple));
-  color: white;
-  padding: 1.5rem;
+  background: linear-gradient(90deg, var(--highlight-red), var(--highlight-orange));
+  color: #fff;
+  padding: 1.2rem;
   text-align: center;
   font-size: 1.8rem;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid var(--highlight-purple);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  border-bottom: 3px solid var(--highlight-yellow);
+  border-radius: 0 0 16px 16px;
 }
 
 #adminheader + div {
@@ -28,40 +35,46 @@
   color: var(--text-muted);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  border-bottom: 1px solid #333;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #ffe0b2;
+  box-shadow: 0 2px 6px var(--shadow-light);
 }
 
+/* ---------- MAIN LAYOUT ---------- */
 #container {
   display: flex;
-  min-height: 90vh;
+  flex-wrap: wrap;
+  min-height: 88vh;
   background-color: var(--primary-bg);
-  color: var(--text-main);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
+/* ---------- SIDEBAR ---------- */
 #adminmenu {
   width: 260px;
-  background-color: var(--sidebar-bg);
+  background: linear-gradient(180deg, var(--sidebar-bg), #ffe8c2);
   padding: 1.2rem;
-  backdrop-filter: blur(6px);
-  border-right: 1px solid #2c2c2c;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6);
+  border-right: 2px solid #ffcc80;
+  box-shadow: 4px 0 10px var(--shadow-light);
+  border-radius: 0 16px 16px 0;
 }
 
+/* Nav Links */
 #adminmenu .nav-link {
-  color: var(--text-muted) !important;
-  background-color: transparent;
+  color: var(--text-main) !important;
+  background-color: #fff;
   padding: 12px 18px;
   margin-bottom: 10px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
   font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #ffe0b2;
+  box-shadow: 0 2px 4px var(--shadow-light);
   position: relative;
   overflow: hidden;
-  z-index: 1;
 }
 
 #adminmenu .nav-link::before {
@@ -70,12 +83,12 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, var(--highlight-green), var(--highlight-blue));
+  background: linear-gradient(120deg, var(--highlight-orange), var(--highlight-yellow));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
   z-index: -1;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 #adminmenu .nav-link:hover::before,
@@ -85,22 +98,59 @@
 
 #adminmenu .nav-link:hover,
 #adminmenu .nav-link.active {
-  color: #121212 !important;
-  font-weight: bold;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
+/* ---------- MAIN DATA ---------- */
 #admindata {
   flex: 1;
   padding: 2rem;
   background-color: var(--card-bg);
-  box-shadow: inset 0 0 12px rgba(0,0,0,0.4);
-  border-left: 1px solid #2e2e2e;
+  border-left: 2px solid #ffe0b2;
+  box-shadow: inset 0 0 10px var(--shadow-light);
+  border-radius: 16px 0 0 16px;
 }
 
-/* Specific Text Colors for a colorful UI */
-#admindata h1, #admindata h2, #admindata h3 {
+#admindata h1,
+#admindata h2,
+#admindata h3 {
   color: var(--highlight-orange);
+  font-weight: 600;
 }
-#admindata p, #admindata span {
+
+#admindata p,
+#admindata span {
   color: var(--text-main);
+  line-height: 1.6;
 }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+  }
+
+  #adminmenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 2px solid #ffcc80;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  #adminmenu .nav-link {
+    margin: 0.4rem;
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  #admindata {
+    padding: 1.5rem;
+    border-radius: 0;
+  }
+}
+

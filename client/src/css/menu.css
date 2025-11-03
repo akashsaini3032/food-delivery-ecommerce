@@ -1,0 +1,25 @@
+.fancy-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.fancy-search,
+.fancy-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ffb199;
+  background-color: #fff8f3;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.fancy-search:focus,
+.fancy-select:focus {
+  outline: none;
+  border-color: #ff512f;
+  box-shadow: 0 0 8px rgba(255, 81, 47, 0.3);
+}
